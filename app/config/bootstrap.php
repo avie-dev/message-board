@@ -11,6 +11,14 @@ require_once HELPERS_DIR.'html_helper.php';
 // config
 require_once CONFIG_DIR.'log.php';
 
+//vendor
+require_once VENDOR_DIR.'SimpleDBI/src/SIMPLEDBI.php';
+
+require_once CONFIG_DIR.'log.php';
+require_once CONFIG_DIR.'router.php';
+require_once CONFIG_DIR.'database.php';
+
+
 spl_autoload_register(function($name) {
     $filename = Inflector::underscore($name) . '.php';
     if (strpos($name, 'Controller') !== false) {
@@ -21,3 +29,4 @@ spl_autoload_register(function($name) {
         }
     }
 });
+
