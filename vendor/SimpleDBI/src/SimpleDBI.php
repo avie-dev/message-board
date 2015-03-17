@@ -5,6 +5,7 @@
  * @license MIT License
  * @author Tatsuya Tsuruoka <http://github.com/ttsuruoka>
  */
+require_once 'SimpleDBIStatement.php';
 
 class SimpleDBI
 {
