@@ -1,0 +1,5 @@
+2015-03-17T13:53:22.069855+09:00		sql	0.020239	1:(localhost) SELECT * FROM thread; ()
+2015-03-17T13:58:17.717327+09:00		sql	0.000210	1:(localhost) SELECT * FROM thread; ()
+2015-03-17T14:01:11.467663+09:00		sql	0.000240	1:(localhost) SELECT * FROM thread; ()
+2015-03-17T15:22:54.147808+09:00		sql	0.002130	1:(localhost) SELECT * FROM thread; ()
+2015-03-17T15:23:24.066179+09:00		sql	0.000241	1:(localhost) SELECT * FROM thread; ()
