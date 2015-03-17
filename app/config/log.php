@@ -86,7 +86,9 @@ class Log
      */
     protected static function getTimestamp()
     {
+
         // マイクロ秒オーダーの時間を取得
+	date_default_timezone_set('Asia/Tokyo');
         list($usec, $sec) = explode(' ', microtime());
         return sprintf("%s.%06d%s", date('Y-m-d\TH:i:s', $sec), (int)round($usec * 1000000), date('P'));
     }
