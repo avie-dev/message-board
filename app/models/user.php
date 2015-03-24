@@ -33,7 +33,7 @@ class User extends AppModel
 	$db = DB::conn();
 	$db->begin();
 
-	$db->query('INSERT INTO user SET username = ?, password = ?, created = NOW()', array($this->username, $this->password)); 
+	$db->query('INSERT INTO user SET username = ?, password = ?, created = NOW()', array($this->username, hash_password($this->password))); 
 
 	$db->commit();
     }
