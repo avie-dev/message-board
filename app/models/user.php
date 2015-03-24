@@ -38,5 +38,12 @@ class User extends AppModel
 	$db->commit();
     }
 
+    public function allow_login()
+    {
+	 $db = DB::conn();
+	 $row = $db->row('SELECT id, username FROM user WHERE username = ? AND password = ?', array($this->username, hash_password($this->password)));
+
+	 return $row;
+    }
 
 } 

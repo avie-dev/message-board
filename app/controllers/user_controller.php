@@ -30,6 +30,39 @@ class UserController extends AppController
 
     }
 
+    public function login()
+    {
+	$user = new User;
+        $page = Param::get('page_next', 'login');
+
+
+	switch ($page){
+	case 'login':
+	    break;
+	case 'login_end';
+	    $user->username = Param::get('username');
+	    $user->password = Param::get('password');
+            $current_user = $user->allow_login();
+
+	    if ($current_user){
+		$_SESSION['id'] = $current_user['id'];
+		$_SESSION['username'] = $current_user['username'];
+		$login_succeed = true;
+		$_SESSION['login_succeed'] = $login_succeed;
+	    }else{
+		$login_succeed = false;
+		$page = 'login';
+	    }
+            break;
+	default:
+	    throw new NotfoundException("{page} is not found");
+	    break;
+	}
+	$this->set(get_defined_vars());
+	$this->render($page);
+
+    }
+
 
 
 }
