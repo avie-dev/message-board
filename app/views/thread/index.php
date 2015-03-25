@@ -10,5 +10,3 @@
 
 </ul>
   <a class="btn btn-large btn-primary" href="<?php eh(url('thread/create')) ?>">Create</a>
-  <a class="btn btn-large btn-primary" href="<?php eh(url('user/add_new')) ?>">Register</a>
-  <a class="btn btn-large btn-primary" href="<?php eh(url('user/login')) ?>"> Login </a>

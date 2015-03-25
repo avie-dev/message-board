@@ -1,0 +1,11 @@
+/**
+* Created by: cello-j
+* Date: 2015/3/25
+*/
+
+.right-positioner {
+	position: relative;
+	text-align: right;
+	float: right;
+
+}
