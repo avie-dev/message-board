@@ -3,16 +3,23 @@ class ThreadController extends AppController
 {
     public function index()
     {
+        //add pagination
+        /*$page = Param::get('page',1);
+        $per_page = 5;
+
+        $pagination = new SimplePagination($page, $per_page);
+
+        */
         $threads = Thread::getAll();
-	$this->set(get_defined_vars());
-	$this->render();
+	    $this->set(get_defined_vars());
+	    $this->render();
     }
 
     public function view()
     {
         $thread = Thread::get(Param::get('thread_id'));
-	$comments = $thread->getComments();
-	$this->set(get_defined_vars());
+        $comments = $thread->getComments();
+	    $this->set(get_defined_vars());
 
     }
     public function write()
@@ -45,6 +52,12 @@ class ThreadController extends AppController
 	$thread = new Thread;
 	$comment = new Comment;
 	$page = Param::get('page_next', 'create');
+
+    if(!isset($_SESSION['username'])){
+        header("Location:" . APP_BASE_PATH . 'user/login');
+        $_SESSION['require_login'] = true;
+        exit();
+    }
 
 	switch($page){
         case 'create':

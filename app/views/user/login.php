@@ -1,3 +1,8 @@
+<?php if (isset($_SESSION['require_login'])):?>
+	<div class="alert alert-block">
+	    <h4 class="alert-heading"> The process requires login! </h4>
+	</div>
+<?php endif ?>
 <h1>Login<h1>
 
 <form class="well" method="post" action="<?php eh(url('user/login'))?>">

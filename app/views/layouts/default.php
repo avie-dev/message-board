@@ -13,7 +13,7 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="brand" href="/">KLab Forum</a>
+         <a class="brand" href="/"> <img src="/bootstrap/img/com_header.gif">KLab Forum</a>
 	  <div class="right-positioner">
           <?php if(!isset($_SESSION['username'])):?>
                <a class="btn btn-small btn-primary" href="<?php eh(url('user/add_new')) ?>">Register</a>

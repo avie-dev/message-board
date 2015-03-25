@@ -18,6 +18,9 @@ require_once CONFIG_DIR.'log.php';
 require_once CONFIG_DIR.'router.php';
 require_once CONFIG_DIR.'database.php';
 
+//lib
+require_once LIB_DIR.'SimplePagination/SimplePagination.php';
+
 spl_autoload_register(function($name) {
     $filename = Inflector::underscore($name) . '.php';
     if (strpos($name, 'Controller') !== false) {
