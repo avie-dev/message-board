@@ -6,14 +6,9 @@
     <link rel="shortcut icon" type="image/x-icon" href="/bootstrap/img/logo.ico">
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="/bootstrap/css/board.css" rel="stylesheet">
-    <style>
-      body {
-        padding-top: 60px;
-      }
-    </style>
   </head>
 
-  <body>
+  <body class="background-gradient">
 
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
@@ -32,7 +27,7 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="contents-container">
 
       <?php echo $_content_ ?>
 

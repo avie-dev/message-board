@@ -3,9 +3,80 @@
 * Date: 2015/3/25
 */
 
-.right-positioner {
+body 
+{
+	margin: 0;
+	padding-top: 30px;
+	line-height: 1.5em;
+	font-family: "ヒラギノ角ゴPro W3", "Hiragino Kaku Gothic Pro", Osaka, "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+	font-size: 13px;
+	color: #787f8c;
+	background: #ffffff;
+	background-repeat:repeat;
+	background-attachment:fixed;
+	
+}
+.contents-container
+{
+ 	clear:both;
+ 	height:100%;
+	width: 960px;
+	background: url(../img/board_bg_img.gif) repeat-y;
+	margin: 0 auto;
+	padding-left: 20px;
+	padding-right: 0px;
+	padding-top: 10px;
+	padding-bottom: 20px;
+	-moz-border-radius: 2px;
+	border-radius: 1px;
+	-moz-box-shadow: 0 0 5px 5px #888;
+	-webkit-box-shadow: 0 0 5px 5px#888;
+	box-shadow: 0 0 5px 5px #888;
+}
+
+
+.background-gradient
+{
+	background: #1691ca; /* Old browsers */
+	background: -moz-linear-gradient(left,  #1691ca 0%, #a4dbea 9%, #a4dbea 90%, #48a8ce 100%, #005fe5 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,#1691ca), color-stop(9%,#a4dbea), color-stop(90%,#a4dbea), color-stop(100%,#48a8ce), color-stop(100%,#005fe5)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left,  #1691ca 0%,#a4dbea 9%,#a4dbea 90%,#48a8ce 100%,#005fe5 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left,  #1691ca 0%,#a4dbea 9%,#a4dbea 90%,#48a8ce 100%,#005fe5 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(left,  #1691ca 0%,#a4dbea 9%,#a4dbea 90%,#48a8ce 100%,#005fe5 100%); /* IE10+ */
+	background: linear-gradient(to right,  #1691ca 0%,#a4dbea 9%,#a4dbea 90%,#48a8ce 100%,#005fe5 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1691ca', endColorstr='#005fe5',GradientType=1 ); /* IE6-9 */
+}
+
+.right-positioner 
+{
 	position: relative;
 	text-align: right;
 	float: right;
 
 }
+
+.table-spacer
+{
+	width: 940px;
+	margin: 0 auto;
+ 	padding-left: 0px;
+ 	padding-top: 20px;
+ 	padding-bottom: 20px;
+}
+
+.cell-spacer
+{
+ 	padding-top: 20px;
+ 	padding-bottom: 20px;
+ 	padding-left: 10px;
+ 	font-size: 16px;
+}
+.icon
+{
+	background: url(../img/chat_icon.jpg) no-repeat;
+	width: 50px;
+}
+
+
+
+
