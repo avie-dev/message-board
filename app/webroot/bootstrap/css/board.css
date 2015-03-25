@@ -34,6 +34,19 @@ body
 	box-shadow: 0 0 5px 5px #888;
 }
 
+.view-comment-box
+{
+	width: 90%;
+	padding-left: 10px;
+	padding-top: 5px;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	-moz-border-radius: 2px;
+	border-radius: 1px;
+	-moz-box-shadow: 0 0 1px 1px #888;
+	-webkit-box-shadow: 0 0 1px 1px#888;
+	box-shadow: 0 0 1px 1px #888;
+}
 
 .background-gradient
 {
@@ -77,6 +90,12 @@ body
 	width: 50px;
 }
 
+.form
+{
+	width: 90%;
+	margin: 0 auto;
+	padding: 10px;
+}
 
 
 

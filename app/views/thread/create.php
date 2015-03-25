@@ -28,7 +28,7 @@
 
 <?php endif ?>
 
-<form class="well" method="post" action="<?php eh(url(''))?>">
+<form class="form" method="post" action="<?php eh(url(''))?>">
     <label>Title</label>
     <input type="text" class="span2" name="title" value="<?php eh(Param::get('title')) ?>">
     <label>Your name</label>

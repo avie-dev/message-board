@@ -4,15 +4,16 @@
      <div class="meta">
         <?php eh($k + 1)  ?>: <?php eh($v->username) ?> <?php eh($v->created)?>
      </div>
-     <div>
+     <div class="view-comment-box">
         <?php echo readable_text($v->body) ?>
      </div>
 
 </div>
 <?php endforeach ?>
 
-<hr>
-<form class="well" method="post" action="<?php eh(url('thread/write')); ?>" >
+
+<form class="form" method="post" action="<?php eh(url('thread/write')); ?>" >
+    <hr>
     <label>Your Name</label>
     <input type = "text" name="username" 
     value="<?php if(!isset($_SESSION['username'])):

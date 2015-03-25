@@ -22,7 +22,7 @@
 </div>
 <?php endif ?>
 
-<form class="well" method="post" action="<?php eh(url('thread/write')) ?>" >
+<form class="form" method="post" action="<?php eh(url('thread/write')) ?>" >
     <label>Your name </label>
     <input type = "text" name="username" 
     value="<?php if(!isset($_SESSION['username'])):
