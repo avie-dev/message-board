@@ -61,6 +61,12 @@ class UserController extends AppController
 	$this->render($page);
 
     }
+    public function logout()
+    {
+    	session_destroy();
+    	header("Location:" . APP_BASE_PATH);
+    	exit();
+    }
 
 
 
