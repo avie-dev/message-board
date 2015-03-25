@@ -21,6 +21,7 @@ class Thread extends AppModel
 
 	 $params = array(
 		 'title' => $this->title,
+		 'owner' => $this->owner,
 	 );
 	 $db->insert('thread', $params);
 	 //$db->query('INSERT INTO thread SET title = ?, created = NOW()', array($this->title));

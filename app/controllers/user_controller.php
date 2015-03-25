@@ -48,6 +48,7 @@ class UserController extends AppController
 		$_SESSION['username'] = $current_user['username'];
 		$login_succeed = true;
 		$_SESSION['login_succeed'] = $login_succeed;
+		$_SESSION['require_login'] = false;
 	    }else{
 		$login_succeed = false;
 		$page = 'login';
@@ -57,6 +58,7 @@ class UserController extends AppController
 	    throw new NotfoundException("{page} is not found");
 	    break;
 	}
+
 	$this->set(get_defined_vars());
 	$this->render($page);
 
