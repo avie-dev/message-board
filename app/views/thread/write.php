@@ -24,7 +24,14 @@
 
 <form class="well" method="post" action="<?php eh(url('thread/write')) ?>" >
     <label>Your name </label>
-    <input type = "text" class="span" name="username" value="<?php eh(Param::get('username')) ?>">
+    <input type = "text" name="username" 
+    value="<?php if(!isset($_SESSION['username'])):
+              eh(Param::get('username'));         
+          else:
+               eh(trim($_SESSION['username']));
+          endif
+        ?>
+     ">
     <label>Comment</label>
     <textarea name="body"> <?php eh(Param::get('body')) ?></textarea>
     <br />
