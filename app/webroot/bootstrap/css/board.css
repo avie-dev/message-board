@@ -84,6 +84,17 @@ body
  	padding-left: 10px;
  	font-size: 16px;
 }
+
+.cell-spacer-min
+{
+	width: 25%;
+	padding-left: 10px;
+	font-size: 11px;
+
+
+
+}
+
 .icon
 {
 	background: url(../img/chat_icon.jpg) no-repeat;

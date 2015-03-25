@@ -55,7 +55,7 @@ class ThreadController extends AppController
 
     if(!isset($_SESSION['username'])){
         header("Location:" . APP_BASE_PATH . 'user/login');
-        $_SESSION['require_login'] = true;
+        $_SESSION['require_login'] = "create";
         exit();
     }
 

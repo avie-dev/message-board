@@ -1,27 +1,27 @@
-<h1> Create a thread </h1>
+<h1> スレッドを作成</h1>
 
 <?php if($thread->hasError() || $comment->hasError()): ?>
 <div class="alert alert-block">
 
-    <h4 class="alert-heading"> Validation error! </h4>
+    <h4 class="alert-heading"> 検証エラー! </h4>
     <?php if (!empty($thread->validation_errors['title']['length'])): ?>
-        <div><em>Title</em> must be between
-            <?php eh($thread->validation['title']['length'][1])?> and
-            <?php eh($thread->validation['title']['length'][2]) ?> characters in length.
+        <div><em>タイトル</em> は
+            <?php eh($thread->validation['title']['length'][1])?> 〜
+            <?php eh($thread->validation['title']['length'][2]) ?> 文字以内で入力してください。
         </div>
     <?php endif ?>
 
 <?php if (!empty($comment->validation_errors['username']['length'])): ?> 
-        <div><em>Your name</em> must be between
-            <?php eh($comment->validation['username']['length'][1]) ?> and
-            <?php eh($comment->validation['username']['length'][2]) ?> characters in length.
+        <div><em>お名前</em> は
+            <?php eh($comment->validation['username']['length'][1]) ?> 〜
+            <?php eh($comment->validation['username']['length'][2]) ?> 文字以内で入力してください。
         </div>
     <?php endif ?>
 
     <?php if (!empty($comment->validation_errors['body']['length'])):?>
-        <div><em>Comment<em> must be between
-            <?php eh($comment->validation['body']['length'][1]) ?> and
-            <?php eh($comment->validation['body']['length'][2]) ?> characters in length.
+        <div><em>コメント<em> は
+            <?php eh($comment->validation['body']['length'][1]) ?> 〜
+            <?php eh($comment->validation['body']['length'][2]) ?> 文字以内で入力してください。
         </div>
 <?php print_r($comment); endif ?>
 </div>
@@ -29,9 +29,9 @@
 <?php endif ?>
 
 <form class="form" method="post" action="<?php eh(url(''))?>">
-    <label>Title</label>
+    <label>タイトル：</label>
     <input type="text" class="span2" name="title" value="<?php eh(Param::get('title')) ?>">
-    <label>Your Name</label>
+    <label>ユーザ名：</label>
     <input type = "text" name="username" 
     value="<?php if(!isset($_SESSION['username'])):
               eh(Param::get('username'));         
@@ -40,9 +40,9 @@
           endif
         ?>
      ">
-    <label>Comment</label>
+    <label>コメント</label>
     <textarea name="body"><?php eh(Param::get('body')) ?></textarea>
     <br />
     <input type="hidden" name="page_next" value="create_end">
-    <button type="submit" class="btn btn-primary"> Submit </button>			 
+    <button type="submit" class="btn btn-primary"> 投稿する </button>			 
 </form>

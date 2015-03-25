@@ -1,1 +1,1 @@
-<h1> You have successfully Logged out. </h2>
+<h1> ログアウトされました </h2>

@@ -1,16 +1,16 @@
-<?php if (isset($_SESSION['require_login'])):?>
+<?php if ($_SESSION['require_login'] == "create"):?>
 	<div class="alert alert-block">
-	    <h4 class="alert-heading"> The process requires login! </h4>
+	    <h4 class="alert-heading"> ログインが必要です。</h4>
 	</div>
-<?php endif ?>
-<h1>Login<h1>
+<?php $_SESSION['require_login']= ""; endif ?>
+<h1>ログイン<h1>
 
-<form class="well" method="post" action="<?php eh(url('user/login'))?>">
-<label>Username</label>
+<form class="form" method="post" action="<?php eh(url('user/login'))?>">
+<label>ユーザ名：</label>
 <input type="text" class="span2" name="username" value="<?php eh(Param::get('username'))?>">
-<label>Password</label>
+<label>パスワード：</label>
 <input type="password" class="span2" name="password" value="<?php eh(Param::get('password'))?>">
 <br />
 <input type="hidden" name="page_next" value="login_end">
-<button type="submit" class="btn btn-primary">Submit</button>
+<button type="submit" class="btn btn-primary">ログイン</button>
 </form>

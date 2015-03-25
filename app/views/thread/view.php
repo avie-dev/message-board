@@ -14,7 +14,7 @@
 
 <form class="form" method="post" action="<?php eh(url('thread/write')); ?>" >
     <hr>
-    <label>Your Name</label>
+    <label>ユーザ名：</label>
     <input type = "text" name="username" 
     value="<?php if(!isset($_SESSION['username'])):
               eh(Param::get('username'));         
@@ -24,10 +24,10 @@
         ?>
      ">
 
-    <label>Comment</label>
+    <label>コメント：</label>
     <textarea name="body"><?php eh(Param::get('body')) ?> </textarea>
     <br />
     <input type="hidden" name="thread_id" value="<?php eh($thread->id) ?>">
     <input type="hidden" name="page_next" value="write_end">
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">投稿する</button>
 </form> 

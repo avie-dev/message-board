@@ -1,6 +1,6 @@
-<h2> New User Registration </h2>
+<h2> 新規登録 </h2>
 <p class="alert alert-success">
-    You have successfully registered your account.
+    アカウントが登録されました。
 </p>
 
- <a href='/'> &larr;Back to main </a>
+ <a href='/'> &larr;戻る</a>
