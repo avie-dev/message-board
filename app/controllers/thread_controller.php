@@ -3,14 +3,32 @@ class ThreadController extends AppController
 {
     public function index()
     {
-        //add pagination
-        /*$page = Param::get('page',1);
-        $per_page = 5;
 
-        $pagination = new SimplePagination($page, $per_page);
+        $all_record_rows = Thread::getThreadCount();
+        $page_rows = 5;
+        
+        //最後のページを設定する
+        $last = ceil($all_record_rows / $page_rows);
 
-        */
-        $threads = Thread::getAll();
+        $page = Param::get('page', 1);
+
+        if ($page < 1){
+            $page = 1;
+        }else if ($page > $last){
+            $page = $last;
+        }
+        $pagination = new SimplePagination($page, $page_rows);
+      
+        $start = $pagination->start_index - 1;
+        $end = $pagination->count + 1;
+
+        //クエリー用のリミット
+        $limit = 'LIMIT ' . $start.','. $end;
+        
+        $threads = Thread::getAll($limit);
+     
+        $pagination->checkLastPage($threads);
+
 	    $this->set(get_defined_vars());
 	    $this->render();
     }

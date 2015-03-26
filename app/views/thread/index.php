@@ -15,9 +15,11 @@
 		         [作成日]<?php eh($v->created)?></p>
 		  </td>
 		</tr> <?php endforeach ?>
+
 	</table>
 </div>
 
 <div align="center">  
+	<p><?php include_once APP_DIR.'views/layouts/pagination.php' ?></p>
 	<a class="btn btn-large btn-primary" href="<?php eh(url('thread/create')) ?>" >新規スレッドを作成</a>
 </div>

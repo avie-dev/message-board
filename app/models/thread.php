@@ -37,11 +37,11 @@ class Thread extends AppModel
      }
  
 
-   public static function getAll()
+    public static function getAll($limit)
     {
         $threads = array();
 		$db = DB::conn();
-		$rows = $db->rows('SELECT * FROM thread');
+		$rows = $db->rows("SELECT * FROM thread {$limit}");
 
 		foreach ($rows as $row){
 		    $threads[] = new Thread($row);
@@ -71,7 +71,7 @@ class Thread extends AppModel
 	 	return $comments;
      }
 
-     public function write(Comment $comment)
+    public function write(Comment $comment)
      {
 	 	if (!$comment->validate()){
 	         throw new ValidationException('invalid comment');
@@ -83,5 +83,12 @@ class Thread extends AppModel
 	 	);
 	     
      }
+
+    public static function getThreadCount()
+    {
+    	$db = DB::conn();
+    	$rows = $db->value('SELECT COUNT(id) FROM thread');
+    	return $rows;
+    }
 
 }
