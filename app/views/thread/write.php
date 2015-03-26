@@ -7,16 +7,17 @@
 
     <?php if (!empty($comment->validation_errors['username']['length'])): ?>
         <div> <em>ユーザ名</em> は
-          <?php eh($comment->validation['username']['length'][1]) ?> 〜
-          <?php eh($comment->validation['username']['length'][2])?> 文字以内で入力してください。
+          <?php eh($comment->validation['username']['length']['min']) ?> 〜
+          <?php eh($comment->validation['username']['length']['max'])?> 文字以内で入力してください。
         </div>
 
     <?php endif ?>
     <?php if (!empty($comment->validation_errors['body']['length'])): ?>
+
         <div> <em>コメント</em> は
-           <?php eh($comment->validation['body']['length'][1]) ?>
+           <?php eh($comment->validation['body']['length']['min']) ?>
             〜
-           <?php eh($comment->validation['body']['length'][2]) ?> 文字以内で入力してください。
+           <?php eh($comment->validation['body']['length']['max']) ?> 文字以内で入力してください。
         </div>
     <?php endif ?>
 </div>

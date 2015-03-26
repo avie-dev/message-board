@@ -1,8 +1,10 @@
-<?php if ($_SESSION['require_login'] == "create"):?>
+<?php if(isset($_SESSION['require_login'])):
+      if ($_SESSION['require_login'] == "create"):?>
 	<div class="alert alert-block">
 	    <h4 class="alert-heading"> ログインが必要です。</h4>
 	</div>
-<?php $_SESSION['require_login']= ""; endif ?>
+<?php $_SESSION['require_login']= ""; endif; endif; ?>
+
 <h1>ログイン<h1>
 
 <form class="form" method="post" action="<?php eh(url('user/login'))?>">

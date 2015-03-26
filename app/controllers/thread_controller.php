@@ -43,6 +43,7 @@ class ThreadController extends AppController
        	    break; 
        }
 
+
         $this->set(get_defined_vars());
         $this->render($page);
     }

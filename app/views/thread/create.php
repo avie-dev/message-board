@@ -6,24 +6,24 @@
     <h4 class="alert-heading"> 検証エラー! </h4>
     <?php if (!empty($thread->validation_errors['title']['length'])): ?>
         <div><em>タイトル</em> は
-            <?php eh($thread->validation['title']['length'][1])?> 〜
-            <?php eh($thread->validation['title']['length'][2]) ?> 文字以内で入力してください。
+            <?php eh($thread->validation['title']['length']['min'])?> 〜
+            <?php eh($thread->validation['title']['length']['max']) ?> 文字以内で入力してください。
         </div>
     <?php endif ?>
 
 <?php if (!empty($comment->validation_errors['username']['length'])): ?> 
         <div><em>お名前</em> は
-            <?php eh($comment->validation['username']['length'][1]) ?> 〜
-            <?php eh($comment->validation['username']['length'][2]) ?> 文字以内で入力してください。
+            <?php eh($comment->validation['username']['length']['min']) ?> 〜
+            <?php eh($comment->validation['username']['length']['max']) ?> 文字以内で入力してください。
         </div>
     <?php endif ?>
 
     <?php if (!empty($comment->validation_errors['body']['length'])):?>
         <div><em>コメント<em> は
-            <?php eh($comment->validation['body']['length'][1]) ?> 〜
-            <?php eh($comment->validation['body']['length'][2]) ?> 文字以内で入力してください。
+            <?php eh($comment->validation['body']['length']['min']) ?> 〜
+            <?php eh($comment->validation['body']['length']['max']) ?> 文字以内で入力してください。
         </div>
-<?php print_r($comment); endif ?>
+<?php endif ?>
 </div>
 
 <?php endif ?>
