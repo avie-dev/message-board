@@ -68,35 +68,35 @@ class ThreadController extends AppController
 
     public function create()
     {
-	$thread = new Thread;
-	$comment = new Comment;
-	$page = Param::get('page_next', 'create');
+    	$thread = new Thread;
+    	$comment = new Comment;
+    	$page = Param::get('page_next', 'create');
 
-    if(!isset($_SESSION['username'])){
-        header("Location:" . APP_BASE_PATH . 'user/login');
-        $_SESSION['require_login'] = "create";
-        exit();
-    }
+        if(!isset($_SESSION['username'])){
+            header("Location:" . APP_BASE_PATH . 'user/login');
+            $_SESSION['require_login'] = "create";
+            exit();
+        }
 
-	switch($page){
+    	switch($page){
         case 'create':
-	    break;
-	case 'create_end':
-	    $thread->title = Param::get('title');
-        $thread->owner = Param::get('username');
-	    $comment->username = Param::get('username');
-	    $comment->body = Param::get('body');
-	    try{
-		$thread->create($comment);
-	    }catch (ValidationException $e){
-		    $page = 'create';
-	    }
-	    break;
-	default:
-	    throw new NotFoundException("{$page} is not found");
-	    break;
-	}
-	$this->set(get_defined_vars());
-	$this->render($page);
+    	    break;
+    	case 'create_end':
+    	    $thread->title = Param::get('title');
+            $thread->owner = Param::get('username');
+    	    $comment->username = Param::get('username');
+    	    $comment->body = Param::get('body');
+    	    try{
+    		$thread->create($comment);
+    	    }catch (ValidationException $e){
+    		    $page = 'create';
+    	    }
+    	    break;
+    	default:
+    	    throw new NotFoundException("{$page} is not found");
+    	    break;
+    	}
+    	$this->set(get_defined_vars());
+    	$this->render($page);
     }    
 }

@@ -4,14 +4,18 @@ class User extends AppModel
 {
     public $validation = array(
        'username' => array(
-	   'length' => array(
-	       'validate_between', 6, 32,
-	   ),
+	      'length'=> array(
+		     	'type' => 'validate_between', 
+		     	'min' => 6, 
+		     	'max' => 32,
+		      ),
        ),
        'password' => array(
-	    'length' => array(
-	       'validate_between', 6, 12,
-	    ),
+	       'length'=> array(
+		     	'type' => 'validate_between', 
+		     	'min' => 6, 
+		     	'max' => 12,
+		      ),
        ),
        'password_check' => array(
 	     'match' => array(
