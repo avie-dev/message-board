@@ -40,18 +40,24 @@ class UserController extends AppController
 	    break;
 	case 'login_end';
 	    $user->username = Param::get('username');
-	    $user->password = Param::get('password');
-            $current_user = $user->allow_login();
+	    $user_password = Param::get('password');
+
+	    $hash_array = $user->get_hash_password();
+	    $hash = $hash_array['password'];
+       
+        $user->password = verify_password($user_password, $hash);
+
+        $current_user = $user->allow_login();
 
 	    if ($current_user){
-		$_SESSION['id'] = $current_user['id'];
-		$_SESSION['username'] = $current_user['username'];
-		$login_succeed = true;
-		$_SESSION['login_succeed'] = $login_succeed;
-		$_SESSION['require_login'] = false;
+			$_SESSION['id'] = $current_user['id'];
+			$_SESSION['username'] = $current_user['username'];
+			$login_succeed = true;
+			$_SESSION['login_succeed'] = $login_succeed;
+			$_SESSION['require_login'] = false;
 	    }else{
-		$login_succeed = false;
-		$page = 'login';
+			$login_succeed = false;
+			$page = 'login';
 	    }
             break;
 	default:

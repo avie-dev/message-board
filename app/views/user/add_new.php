@@ -4,15 +4,15 @@
     <h4 class="alert-heading">検証エラー!</h4>
     <?php if(!empty($user->validation_errors['username']['length'])): ?>
     <div><em>ユーザ名</em> は
-        <?php eh($user->validation['username']['length'][1]) ?> 〜
-        <?php eh($user->validation['username']['length'][2]) ?> 文字以内で入力してください。
+        <?php eh($user->validation['username']['length']['min']) ?> 〜
+        <?php eh($user->validation['username']['length']['max']) ?> 文字以内で入力してください。
     </div>
     <?php endif ?>
 
     <?php if(!empty($user->validation_errors['password']['length'])): ?>
     <div><em>パスワード</em> は
-        <?php eh($user->validation['password']['length'][1]) ?> 〜
-        <?php eh($user->validation['password']['length'][2]) ?> 文字以内で入力してください。
+        <?php eh($user->validation['password']['length']['min']) ?> 〜
+        <?php eh($user->validation['password']['length']['max']) ?> 文字以内で入力してください。
     </div>
     <?php endif ?>
 
@@ -24,7 +24,7 @@
 </div>
 <?php endif ?> 
 
-<form class="well" method="post" action="<?php eh(url('user/add_new'))?>">
+<form class="form" method="post" action="<?php eh(url('user/add_new'))?>">
     <label><strong>ユーザ名</strong></label>
     <input type="text" class="span2" name="username" value="<?php eh(Param::get('username')) ?>">
     <p><em>※ 1〜32文字以内で入力してください。</em></p><hr />

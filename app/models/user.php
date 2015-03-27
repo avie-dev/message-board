@@ -22,28 +22,37 @@ class User extends AppModel
 
     public function add_new($user)
     {
-	$this->validation['password_check']['match'][] = $this->password;
-	$this->validation['password_check']['match'][] = $this->password_check;
+		$this->validation['password_check']['match'][] = $this->password;
+		$this->validation['password_check']['match'][] = $this->password_check;
 
-	$this->validate();
-	if ($this->hasError() || $user->hasError()){
-		throw new ValidationException('invalid user');
-	}
+		$this->validate();
+		if ($this->hasError() || $user->hasError()){
+			throw new ValidationException('invalid user');
+		}
 
-	$db = DB::conn();
-	$db->begin();
+		$db = DB::conn();
+		$db->begin();
 
-	$db->query('INSERT INTO user SET username = ?, password = ?, created = NOW()', array($this->username, hash_password($this->password))); 
+		$db->query('INSERT INTO user SET username = ?, password = ?, created = NOW()', array($this->username, hash_password($this->password))); 
 
-	$db->commit();
+		$db->commit();
+    }
+
+    public function get_hash_password()
+    {
+    	$db = DB::conn(); 
+    	$row = $db->row('SELECT password FROM user WHERE username = ?', array($this->username));
+    	return $row;
+
     }
 
     public function allow_login()
     {
-	 $db = DB::conn();
-	 $row = $db->row('SELECT id, username FROM user WHERE username = ? AND password = ?', array($this->username, hash_password($this->password)));
 
-	 return $row;
+		 $db = DB::conn();
+		 $row = $db->row('SELECT id, username FROM user WHERE username = ? AND password = ?', array($this->username, $this->password));
+
+     	 return $row;
     }
 
 } 
