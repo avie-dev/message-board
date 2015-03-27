@@ -15,10 +15,13 @@ class UserController extends AppController
 		    $user->password_check = Param::get('password_check');
 		    
 		    try{
-			$user->add_new($user);
+				$user->add_new($user);
+				$_SESSION['username'] = $user->username;
+				header("Location:" . APP_BASE_PATH);
+				exit();
 
 		    }catch (ValidationException $e){
-			$page = 'add_new';
+				$page = 'add_new';
 		    }
 	            break;
 		default:
@@ -33,13 +36,13 @@ class UserController extends AppController
     public function login()
     {
 		$user = new User;
-	        $page = Param::get('page_next', 'login');
+	    $page = Param::get('page_next', 'login');
+	    $_SESSION['login_status'] = 'logging';
 
 		switch ($page){
 		case 'login':
 		    break;
 		case 'login_end';
-			$_SESSION['login_status'] = 'logging';
 
 		    $user->username = Param::get('username');
 		    $user_password = Param::get('password');
@@ -49,12 +52,19 @@ class UserController extends AppController
 	        $user->password = verify_password($user_password, $hash);
 
 	        $current_user = $user->allow_login();
-	        
+
 		    if ($current_user){
 				$_SESSION['id'] = $current_user['id'];
 				$_SESSION['username'] = $current_user['username'];
 				$_SESSION['require_login'] = False;
 				$_SESSION['login_status'] = 'logged';
+
+				if (isset($_SESSION['redirect_next']))
+				{
+					header("Location:" . $_SESSION['redirect_next']);
+					exit();
+				}
+
 		    }else{
 				$_SESSION['login_status'] = 'failed';
 				$page = 'login';
@@ -77,8 +87,6 @@ class UserController extends AppController
     	header("Location:" . APP_BASE_PATH);
     	exit();
     }
-
-
 
 }
 ?>
