@@ -17,14 +17,16 @@ class SimplePagination
     public $count;          // 1ページに何件表示するか
     public $start_index;    // 何件目から表示するか（1オリジン）
     public $is_last_page;   // 最終ページかどうか
+    public $id;
 
-    public function __construct($current, $count)
+    public function __construct($current, $count, $id=NULL)
     {
         $this->current = $current;
         $this->count = $count;
         $this->prev = max($current - 1, 0);
         $this->next = $current + 1;
         $this->start_index = ($current - 1) * $count + 1;
+        $this->id = $id;
     }
 
     /**

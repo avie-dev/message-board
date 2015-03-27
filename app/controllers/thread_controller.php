@@ -12,21 +12,9 @@ class ThreadController extends AppController
 
         $page = Param::get('page', 1);
 
-        if ($page < 1){
-            $page = 1;
-        }else if ($page > $last){
-            $page = $last;
-        }
         $pagination = new SimplePagination($page, $page_rows);
-      
-        $start = $pagination->start_index - 1;
-        $end = $pagination->count + 1;
-
-        //クエリー用のリミット
-        $limit = 'LIMIT ' . $start.','. $end;
-        
+        $limit = paging($page, $page_rows, $pagination);
         $threads = Thread::getAll($limit);
-     
         $pagination->checkLastPage($threads);
 
 	    $this->set(get_defined_vars());
@@ -35,8 +23,19 @@ class ThreadController extends AppController
 
     public function view()
     {
+        //var_dump(Param::get('thread_id'));
         $thread = Thread::get(Param::get('thread_id'));
-        $comments = $thread->getComments();
+        
+        $all_record_rows = Thread::getCommentCount($thread->id);
+        $page_rows = 5;
+
+        $last = ceil($all_record_rows / $page_rows);
+        $page = Param::get('page', 1);
+        $pagination = new SimplePagination($page, $page_rows, Param::get('thread_id'));
+        $limit = paging($page, $page_rows, $pagination);
+        $comments = Thread::getComments($thread->id, $limit);
+
+        $pagination->checkLastPage($comments);
 	    $this->set(get_defined_vars());
 
     }
@@ -60,7 +59,6 @@ class ThreadController extends AppController
       	    throw new NotFoundException("{$page} is not found");
        	    break; 
        }
-
 
         $this->set(get_defined_vars());
         $this->render($page);

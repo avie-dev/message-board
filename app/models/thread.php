@@ -57,19 +57,30 @@ class Thread extends AppModel
 		return new self($row);
     }
 
-    public function getComments()
+    public static function getComments($id, $limit)
     {
 		$comments = array();
 		$db = DB::conn();
 		$rows = $db->rows(
-		 'SELECT * FROM comment WHERE thread_id = ? ORDER BY created ASC',
-		array($this->id)
+		 "SELECT * FROM comment WHERE thread_id = ? ORDER BY created ASC {$limit} ",
+		array($id)
 		);
+
 		foreach ($rows as $row){
 			$comments[] = new Comment($row);
 		}
 	 	return $comments;
      }
+
+    public static function getCommentCount($id)
+    {
+    	$db = DB::conn();
+    	$rows = $db->value(
+		 'SELECT COUNT(id) FROM comment WHERE thread_id = ? ',
+		 array($id)
+		);
+		return $rows;
+    }
 
     public function write(Comment $comment)
      {

@@ -1,4 +1,6 @@
+
 <h1><?php eh($thread->title) ?></h1>
+
 <?php foreach ($comments as $k => $v): ?>
 <div class="comment">
      <div class="meta">
@@ -11,6 +13,9 @@
 </div>
 <?php endforeach ?>
 
+<div align="center">
+    <p><?php include_once APP_DIR.'views/layouts/pagination.php' ?></p>
+</div>
 
 <form class="form" method="post" action="<?php eh(url('thread/write')); ?>" >
     <hr>
@@ -27,7 +32,7 @@
     <label>コメント：</label>
     <textarea name="body"><?php eh(Param::get('body')) ?> </textarea>
     <br />
-    <input type="hidden" name="thread_id" value="<?php eh($thread->id) ?>">
+    <input type="hidden" name="thread_id" value="<?php eh($thread->id); ?>">
     <input type="hidden" name="page_next" value="write_end">
     <button type="submit" class="btn btn-primary">投稿する</button>
 </form> 

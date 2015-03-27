@@ -5,7 +5,9 @@
 		<tr>
 		  <td class="icon"></td>
 		  <td class="cell-spacer">
+		  
 		      <a href="<?php eh(url('thread/view', array('thread_id' => $v->id)))?>"><?php eh($v->title)?></a>
+		   
 		      <div>
 
 		      </div>
