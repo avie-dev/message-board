@@ -28,6 +28,7 @@ body	     TEXT NOT NULL,
 created	     TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
 PRIMARY KEY (id),
 INDEX (thread_id, created)
+CONSTRAINT `fk_comment` FOREIGN KEY (`thread_id`) REFERENCES `thread` (`id`) ON DELETE CASCADE
 )ENGINE=InnoDB;
 
 CREATE TABLE IF NOT EXISTS user (
