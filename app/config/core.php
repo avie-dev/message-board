@@ -1,8 +1,8 @@
 <?php
 define('ENV_PRODUCTION', false);
-define('APP_HOST', 'hello.example.com');
+define('APP_HOST', 'board.example.com');
 define('APP_BASE_PATH', '/');
-define('APP_URL', 'http://hello.example.com/');
+define('APP_URL', 'http://board.example.com/');
 
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', 'On');

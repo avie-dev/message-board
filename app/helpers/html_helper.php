@@ -12,3 +12,8 @@ function readable_text($s)
      $s = nl2br($s);
      return $s;
 }
+
+function redirect_page($page)
+{
+	header("Location: " . APP_URL . "/");
+}

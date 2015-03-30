@@ -1,0 +1,20 @@
+[Tue Mar 24 14:46:41 2015] [error] [client 127.0.0.1] File does not exist: /Users/cello-j/Documents/cello-j/board/app/webroot/favicon.ico
+[Tue Mar 24 19:26:56 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg
+[Tue Mar 24 19:28:00 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg
+[Tue Mar 24 19:28:54 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg
+[Tue Mar 24 19:29:52 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.ico
+[Tue Mar 24 19:39:17 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.ico
+[Tue Mar 24 19:50:00 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.ico
+[Tue Mar 24 19:50:27 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.ico
+[Tue Mar 24 19:56:21 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg
+[Tue Mar 24 19:56:24 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg
+[Tue Mar 24 19:56:26 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg
+[Tue Mar 24 19:56:27 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg
+[Tue Mar 24 19:57:48 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg, referer: http://board.example.com/
+[Tue Mar 24 19:57:48 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg
+[Tue Mar 24 19:58:05 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg
+[Tue Mar 24 19:58:18 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg
+[Tue Mar 24 20:01:18 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg, referer: http://board.example.com/
+[Tue Mar 24 20:01:18 2015] [error] [client 127.0.0.1] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/logo.jpg
+[Wed Mar 25 16:21:00 2015] [error] [client 10.11.22.138] File does not exist: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/templatemo_main_bg.gif, referer: http://klabforum.ohosting.klab.org/bootstrap/css/board.css
+[Wed Mar 25 16:54:23 2015] [error] [client 10.11.22.138] (13)Permission denied: file permissions deny server access: /Users/cello-j/Documents/cello-j/board/app/webroot/bootstrap/img/chat_icon.jpg, referer: http://klabforum.ohosting.klab.org/bootstrap/css/board.css
